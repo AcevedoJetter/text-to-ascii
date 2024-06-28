@@ -4,7 +4,7 @@ This repo converts text to ascii art using FIGlet
 
 # How to see the art
 
-Once you get the `{stringToPrint}.txt` file, you want to zoom out to see all the ascii art
+Run `node main.js` or `npm start` after changing `const stringToPrint` to your desired string. Once the `{stringToPrint}.txt` file is created, you want to zoom out on the file to see all the ascii art generated
 
 # To do
 
