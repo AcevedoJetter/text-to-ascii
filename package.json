@@ -1,0 +1,12 @@
+{
+  "name": "figlet-script",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "figlet": "^1.5.2"
+  }
+}

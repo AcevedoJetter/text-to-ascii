@@ -2,8 +2,8 @@
  * Text To Ascii Art
  */
 
-const figlet = require("figlet");
-const fs = require("fs");
+import figlet from "figlet";
+import fs from "fs";
 
 // Change this string to the text you want the ascii art to say
 const stringToPrint = "Acevedo Jetter";
