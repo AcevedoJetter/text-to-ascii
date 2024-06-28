@@ -1,7 +1,7 @@
-let figlet = require("figlet");
-let fs = require("fs");
+const figlet = require("figlet");
+const fs = require("fs");
 
-let fonts = [
+const fonts = [
   "1Row",
   "3-D",
   "3D Diagonal",
@@ -294,16 +294,16 @@ let fonts = [
 ];
 
 // Change this string to the text you want the ascii art to say
-let stringToPrint = "Hi";
+const stringToPrint = "Acevedo Jetter";
 
-for (let font = 0; font < fonts.length; font++) {
+for (const font of fonts) {
   figlet.text(
     stringToPrint,
     {
-      font: fonts[font],
+      font: font,
       horizontalLayout: "default",
       verticalLayout: "default",
-      whitespaceBreak: true,
+      whitespaceBreak: false,
     },
     function (err, data) {
       if (err) {
@@ -311,13 +311,9 @@ for (let font = 0; font < fonts.length; font++) {
         console.dir(err);
         return;
       }
-      fs.appendFile(
-        `${stringToPrint}.txt`,
-        `${fonts[font]}:\n${data}\n\n`,
-        (err2) => {
-          if (err2) throw err2;
-        }
-      );
+      fs.appendFile(`${stringToPrint}.txt`, `${font}:\n${data}\n\n`, (err2) => {
+        if (err2) throw err2;
+      });
     }
   );
 }
