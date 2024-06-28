@@ -297,23 +297,14 @@ const fonts = [
 const stringToPrint = "Acevedo Jetter";
 
 for (const font of fonts) {
-  figlet.text(
-    stringToPrint,
-    {
-      font: font,
-      horizontalLayout: "default",
-      verticalLayout: "default",
-      whitespaceBreak: false,
-    },
-    function (err, data) {
-      if (err) {
-        console.log("Something went wrong...");
-        console.dir(err);
-        return;
-      }
-      fs.appendFile(`${stringToPrint}.txt`, `${font}:\n${data}\n\n`, (err2) => {
-        if (err2) throw err2;
-      });
+  figlet.text(stringToPrint, { font: font }, function (err, data) {
+    if (err) {
+      console.log("Something went wrong...");
+      console.dir(err);
+      return;
     }
-  );
+    fs.appendFile(`${stringToPrint}.txt`, `${font}:\n${data}\n\n`, (err2) => {
+      if (err2) throw err2;
+    });
+  });
 }
